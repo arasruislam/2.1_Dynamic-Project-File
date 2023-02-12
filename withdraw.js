@@ -4,10 +4,10 @@
  * * Get previous withdraw amount
  * * calculate total withdraw amount
  * * set total withdraw amount
- * 
+ *
  * * get the previous balance amount
  * * set the total balance
- * 
+ *
  * * clear the input field
  */
 
@@ -23,21 +23,25 @@ document.getElementById("btn-withdraw").addEventListener("click", function () {
   const previousWithdrawTotalString = withdrawTotalElement.innerText;
   const previousWithdrawTotal = parseFloat(previousWithdrawTotalString);
 
+  // step 6
+  const totalBalanceAmount = document.getElementById("total-balance");
+  const previousTotalBalanceString = totalBalanceAmount.innerText;
+  const previousBalanceTotal = parseFloat(previousTotalBalanceString);
+
+  // clear input step
+  withdrawField.value = "";
+
+  if (newWithdrawAmount > previousBalanceTotal) {
+    alert("not enough money for withdrawal");
+    return;
+  }
   // step 4
   const currentWithdrawAmount = newWithdrawAmount + previousWithdrawTotal;
-
   // step 5
   withdrawTotalElement.innerText = currentWithdrawAmount;
 
-    // step 6
-    const totalBalanceAmount = document.getElementById("total-balance");
-    const previousTotalBalanceString = totalBalanceAmount.innerText;
-    const previousBalanceTotal = parseFloat(previousTotalBalanceString);
-    
-    // step 7
-    const currentBalance = previousBalanceTotal - newWithdrawAmount; 
-    // step 8
-    totalBalanceAmount.innerText = currentBalance;
-  // clear input step
-  withdrawField.value = "";
+  // step 7
+  const currentBalance = previousBalanceTotal - newWithdrawAmount;
+  // step 8
+  totalBalanceAmount.innerText = currentBalance;
 });
