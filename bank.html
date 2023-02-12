@@ -18,15 +18,15 @@
         <div class="grid grid-cols-3 gap-4 w-9/12 mx-auto text-white">
           <div class="bg-green-500 p-8 rounded-md">
             <h4 class="text-2xl">Deposit</h4>
-            <h2 class="text-5xl">$00</h2>
+            <h2 class="text-5xl">$<span id="total-deposit" >00</span></h2>
           </div>
           <div class="bg-yellow-500 p-8 rounded-md">
             <h4 class="text-2xl">Withdraw</h4>
-            <h2 class="text-5xl">$00</h2>
+            <h2 class="text-5xl">$<span id="total-withdraw">00</span></h2>
           </div>
           <div class="bg-cyan-500 p-8 rounded-md">
             <h4 class="text-2xl">Balance</h4>
-            <h2 class="text-5xl">$900</h2>
+            <h2 class="text-5xl">$<span id="total-balance">900</span></h2>
           </div>
         </div>
       </section>
@@ -35,10 +35,10 @@
       <section class="mt-12">
         <div class="grid grid-cols-2 gap-4 w-9/12 mx-auto">
           <div class="bg-indigo-500 p-8 rounded-md">
-            <h4 class="text-2xl mb-6">Make Deposit</h4>
+            <h4 class="text-2xl mb-6 text-white">Make Deposit</h4>
             <div class="ml-8">
               <input
-                type="email"
+                type="number"
                 name=""
                 id="deposit-amount"
                 class="w-9/12 block mb-3 p-2 rounded-sm font-semibold"
@@ -53,10 +53,10 @@
             </div>
           </div>
           <div class="bg-pink-500 p-8 rounded-md">
-            <h4 class="text-2xl mb-6">Withdraw Now</h4>
+            <h4 class="text-2xl mb-6 text-white">Withdraw Now</h4>
             <div class="ml-8">
                 <input
-              type="email"
+              type="number"
               name=""
               id="withdraw-amount"
               class="w-9/12 block mb-3 p-2 rounded-sm font-semibold"
@@ -74,5 +74,8 @@
         </div>
       </section>
     </main>
+    <script src="./deposit.js"></script>
+    <script src="./withdraw.js"></script>
+
   </body>
 </html>
